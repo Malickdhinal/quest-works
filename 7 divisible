@@ -1,0 +1,5 @@
+a=int(input("enter the no:"))
+if a%7==0:
+    print("it is divisible by 7")
+else:
+    print("not divisible by 7")
