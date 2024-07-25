@@ -1,0 +1,35 @@
+# def modify(x):
+#     x.append(5)
+#     print(x)
+# my=[1,2.3]
+# modify(my)
+# print(my)
+# def add(x,y):
+#     print(x+y)
+# def sub(x,y):
+#     print(x-y)
+# import datetime
+# x=datetime.datetime(2020,5,17,11,23,40)
+# print(x)
+import datetime
+x=datetime.datetime.now()
+print(x.strftime("%A"))
+print(x.strftime("%a"))
+print(x.strftime("%w"))
+print(x.strftime("%d"))
+print(x.strftime("%b"))
+print(x.strftime("%B"))
+print(x.strftime("%m"))
+print(x.strftime("%y"))
+print(x.strftime("%Y"))
+print(x.strftime("%H"))
+print(x.strftime("%I"))
+print(x.strftime("%p"))
+print(x.strftime("%M"))
+print(x.strftime("%s"))
+print(x.strftime("%f"))
+print(x.strftime("%U"))
+print(x.strftime("%c"))
+print(x.strftime("%C"))
+print(x.strftime("%x"))
+print(x.strftime("%X"))
