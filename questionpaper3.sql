@@ -1,5 +1,5 @@
 create table employeedetails(
-empid int primary key auto_increment,
+empid int primary key auto_increment ,
 firstname varchar(30),
 lastname varchar(30),
 salry int,
@@ -11,7 +11,7 @@ insert into employeedetails values(5,"arman","malick",300000,"hr","female")
 ,(2,"sahal","pk",200000,"hr","male")
 ,(3,"aysha","fathima",900000,"ceo","female")
 ;
-
+drop table employeedetails;
 -- third question paper
 select * from employeedetails;-- 1
 select firstname from employeedetails;-- 2
@@ -48,13 +48,21 @@ select dept, max(salry) from employeedetails group by dept order by max(salry) a
 
 create table projectdetails(
 proid int primary key auto_increment,
-employeeid int ,
-proname varchar(30)
+empid int,
+proname varchar(30),
+FOREIGN KEY (empid) REFERENCES employeedetails(empid)
 );
-insert into projectdetails values(1,11,"project 1"),
-(2,12,"project 2"),
-(3,13,"project 3"),
-(4,14,"project 4"),
-(5,15,"project 5");
+insert into projectdetails values(1,1,"project 1"),
+(2,2,"project 1"),
+(3,3,"project 3"),
+(5,3,"project 8"),
+(4,4,"project 4");
 select * from projectdetails;
+drop table projectdetails;
+select proname from projectdetails group by proname having count(empid)>1 ;-- 18
+select firstname,lastname,proname from employeedetails join projectdetails on employeedetails.empid=projectdetails.empid order by firstname;-- 19
+select firstname,lastname,proname from projectdetails right join employeedetails on employeedetails.empid=projectdetails.empid order by firstname;-- 20
+select proname from projectdetails left join employeedetails on projectdetails.empid=employeedetails.empid where employeedetails.empid is null;-- 21
+select firstname,lastname,proname from employeedetails left join projectdetails on employeedetails.empid=projectdetails.empid group by proname having count(proname)>1;-- x-- 22
+
 
